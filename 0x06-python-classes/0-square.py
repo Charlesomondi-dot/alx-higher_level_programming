@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""
-Module 0-square
-Defines class Square
-"""
+# 0-square.py
+# Charles Omondi <232@alxschool.com>
+"""Define a class Square."""
 
 
 class Square:
-	    """Empty class"""
-		        pass
+	"""Represent a square."""
+	        pass
