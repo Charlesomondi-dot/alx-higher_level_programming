@@ -1,55 +1,98 @@
+#!/usr/bin/python3
+"""
+Module 102-square
+Defines class Square with private size and public area
+Can access and update size
+"""
+
+
 class Square:
-	    def __init__(self, size=0):
-		            self.size = size
+	    """
+		        class Square definition
 
-			        @property
-				    def size(self):
-					            return self.__size
+			          Args:
+				          size (int): size of a side in square
 
-						        @size.setter
-							    def size(self, value):
-								            if not isinstance(value, (int, float)):
-										                raise TypeError("size must be a number")
-												        if value < 0:
-													                  raise ValueError("size must be >= 0")
-														             self.__size = value
+						          Functions:
+							          __init__(self, size)
+	        size(self)
+	        size(self, value)
+	        area(self)
+	    """
 
-															        def area(self):
-																	        return self.__size ** 2
+	        def __init__(self, size=0):
+			        """
+					        Initializes square
 
-																		    def __eq__(self, other):
-																			            return self.area() == other.area()
+						        Attributes:
+							            size (int): defaults to 0 if none; don't use __size to call setter
+								            """
+									            self.size = size
 
-																				        def __ne__(self, other):
-																						        return self.area() != other.area()
+										        @property
+											    def size(self):
+												            """"
+														            Getter
 
-																							    def __lt__(self, other):
-																								            return self.area() < other.area()
+															            Return: size
+																            """
+																	            return self.__size
 
-																									        def __le__(self, other):
-																											        return self.area() <= other.area()
+																		        @size.setter
+																			    def size(self, value):
+																				            """
+																						            Setter
 
-																												    def __gt__(self, other):
-																													            return self.area() > other.area()
+																							            Args:
+																								                value: sets size to value, if int and >= 0
+																										        """
+																											        if type(value) is not int:
+																												            raise TypeError("size must be an integer")
+																													            elif value < 0:
+																														                raise ValueError("size must be >= 0")
+																																        else:
+																																	            self.__size = value
 
-																														        def __ge__(self, other):
-																																        return self.area() >= other.area()
+																																		        def area(self):
+																																				        """
+																																						        Calculates area of square
+																																							        Returns:
+																																							                   area
+																																							               """
+																																							               return (self.__size)**2
 
+																																							           def __eq__(self, other):
+																																									           """
+																																											           Compares and returns if equal
+																																												           """
+																																													          return self.size == other.size
 
-																																	if __name__ == "__main__":
-																																	    s_5 = Square(5)
-	    s_6 = Square(6)
+																																														     def __ne__(self, other):
+																																															             """
+																																																	             Compares and returns if not equal
+																																																		             """
+																																																			            return self.size != other.size
 
-	    if s_5 < s_6:
-	            print("Square 5 < Square 6")
-		        if s_5 <= s_6:
-			        print("Square 5 <= Square 6")
-				    if s_5 == s_6:
-				            print("Square 5 == Square 6")
-					        if s_5 != s_6:
-						        print("Square 5 != Square 6")
-							    if s_5 > s_6:
-							            print("Square 5 > Square 6")
-								        if s_5 >= s_6:
-									        print("Square 5 >= Square 6")
+																																																				       def __lt__(self, other):
+																																																					               """
+																																																							               Compares and returns if lesser than
+																																																								               """
+																																																									              return self.size < other.size
 
+																																																										         def __le__(self, other):
+																																																												         """
+																																																														         Compares and returns if lesser than or equal to
+																																																															         """
+																																																																        return self.size <= other.size
+
+																																																																           def __gt__(self, other):
+																																																																		           """
+																																																																				           Compares and returns if greater than
+																																																																					           """
+																																																																						          return self.size > other.size
+
+																																																																							     def __ge__(self, other):
+																																																																								             """
+																																																																										             Compares and returns if greater than or equal to
+																																																																											             """
+																																																																												            return self.size >= other.size
