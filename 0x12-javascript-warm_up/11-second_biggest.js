@@ -11,4 +11,3 @@ function secondMax (array) {
   }
 }
 console.log(secondMax(numsArray));
-
